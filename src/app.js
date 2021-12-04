@@ -8,26 +8,33 @@
 * Licenc: GNU GPL
 */
 var url = 'http://localhost:3000/cars';
-/*
-Nem jöttem rá, hogy ezt mire kéne használnom....
-class Car {
-    id: number;
-    plate: string;
-    color: string;
-    brand: string;
-    year: number;
-    capacity: number;
-    fuel: string;
-    price: number;
-    sold: boolean
-}*/
+var Car = /** @class */ (function () {
+    function Car() {
+    }
+    return Car;
+}());
+var car = new Car();
+var list = document.querySelector('#list');
 fetch(url).then(function (response) { return response.json(); }).then(function (result) {
-    console.log(result);
-    var list = document.querySelector('#list');
-    result.forEach(function (Car) {
-        var li = document.createElement('li');
-        li.innerHTML = Car.plate;
-        li.setAttribute('class', 'list-group-item');
-        list.append(li);
+    result.forEach(function (cars) {
+        addCar(cars);
+        createList();
     });
 });
+function addCar(cars) {
+    car.id = cars.id;
+    car.plate = cars.plate;
+    car.color = cars.color;
+    car.brand = cars.brand;
+    car.year = cars.year;
+    car.capacity = cars.capacity;
+    car.fuel = cars.fuel;
+    car.price = cars.price;
+    car.sold = cars.sold;
+}
+function createList() {
+    var li = document.createElement('li');
+    li.innerHTML = car.plate;
+    li.setAttribute('class', 'list-group-item');
+    list.append(li);
+}

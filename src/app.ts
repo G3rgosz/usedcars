@@ -9,8 +9,6 @@
 */
 var url = 'http://localhost:3000/cars';
 
-/*
-Nem jöttem rá, hogy ezt mire kéne használnom....
 class Car {
     id: number;
     plate: string;
@@ -20,16 +18,33 @@ class Car {
     capacity: number;
     fuel: string;
     price: number;
-    sold: boolean
-}*/
+    sold: boolean;
+}
+
+let car = new Car();
+let list = document.querySelector('#list');
 
 fetch(url).then(response => response.json()).then(result => {
-    console.log(result);
-    let list = document.querySelector('#list');
-    result.forEach(Car => {
-        let li = document.createElement('li');
-        li.innerHTML = Car.plate;
-        li.setAttribute('class', 'list-group-item');
-        list.append(li);
+    result.forEach(cars => {
+        addCar(cars);
+        createList();
     });
 });
+
+function addCar(cars){
+    car.id = cars.id;
+    car.plate = cars.plate;
+    car.color = cars.color;
+    car.brand = cars.brand;
+    car.year = cars.year;
+    car.capacity = cars.capacity;
+    car.fuel = cars.fuel;
+    car.price = cars.price;
+    car.sold = cars.sold;
+}
+function createList(){
+    let li = document.createElement('li');
+    li.innerHTML = car.plate;
+    li.setAttribute('class', 'list-group-item');
+    list.append(li);
+}
