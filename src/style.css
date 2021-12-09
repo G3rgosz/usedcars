@@ -1,0 +1,24 @@
+/*
+* File: style.css
+* Author: Szivák Gergő
+* Copyright: 2021, Szivák Gergő
+* Group: Szoft II N
+* Date: 2021-12-9
+* Github: https://github.com/Gergosz-2000/usedcars
+* Licenc: GNU GPL
+*/
+body {
+	font-family: 'Comic Sans MS, Comic Sans', cursive;
+}
+h1{
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	padding: 20px;
+	text-align: center;
+	font-family: 'Brush Script MT', cursive;
+	font-weight: bold;
+	color: rgb(128, 19, 0);
+}
+h2{
+	color: rgb(128, 19, 0);
+}
