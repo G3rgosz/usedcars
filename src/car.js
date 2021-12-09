@@ -3,11 +3,8 @@
 * Author: Szivák Gergő
 * Copyright: 2021, Szivák Gergő
 * Group: Szoft II N
-* Date: 2021-12-02
+* Date: 2021-12-09
 * Licenc: GNU GPL
 */
-var Car = /** @class */ (function () {
-    function Car() {
-    }
-    return Car;
-}());
+export class Car {
+}
